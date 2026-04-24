@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Navigation Website</title>
+    <style>
+        /* Hide all sections by default */
+        section {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+        /* Only show the section that is "active" */
+        section.active {
+            display: block;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+         body {
+            background-color: #2C727E;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #D9D9D9;
+            padding: 20px;
+            border-radius: 30px;
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        /* Each item */
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .nav-item img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .nav-item p {
+            margin-top: 5px;
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+    <div class="navbar">
+         <a onclick="showSection('home')">
+        <div class="nav-item">
+            <img src="assets/Home.png">
+            <p>Home</p></a>
+        </div>
+
+        <div class="nav-item">
+            <a onclick="showSection('skills')">
+            <img src="assets/Skills.png">
+            <p>Skills</p></a>
+        </div>
+
+        <div class="nav-item">
+            <a onclick="showSection('About')">
+            <img src="assets/About.png"></a>
+            <p>About</p>
+        </div>
+
+        <div class="nav-item">
+            <img src="assets/Services.png">
+            <p>Services</p>
+        </div>
+
+        <div class="nav-item">
+            <img src="assets/Contact.png">
+            <p>Contacts</p>
+        </div>
+
+    </div>
+     </nav>
+
+    <hr>
+
+    <section id="home" class="active">
+         <p>Welcome to my portfolio. I am Kaliza,</p>
+           <p>a Software Development trainee passionate about creating modern,</p> 
+           <p> user-friendly, and creative digital solutions.</p>
+            <p>I enjoy learning new technologies and building projects that solve real problems.</p>
+            
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Email: example@gmail.com</p>
+        <p>Phone: +250 000 000 000</p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // 1. Get all sections
+            const sections = document.querySelectorAll('section');
+
+            // 2. Loop through and hide them all
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 3. Show only the one that was clicked
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
